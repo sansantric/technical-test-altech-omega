@@ -29,7 +29,7 @@ function Navbar({ handleOpenLogin }) {
   return (
     <nav
       className={`p-4 md:p-6 md:pl-20 md:pr-20 sticky top-0 w-full z-50 bg-[#001220] md:mb-0 mb-10 ${
-        scrolled ? "bg-opacity-40 backdrop-blur-sm " : "md:bg-opacity-0"
+        scrolled ? "md:bg-opacity-40 md:backdrop-blur-sm " : "md:bg-opacity-0"
       } transition-opacity duration-3000`}
     >
       <div className="container mx-auto flex justify-between items-center">
@@ -129,16 +129,25 @@ function Navbar({ handleOpenLogin }) {
             </svg>
           </button>
           <div className="flex flex-col font-semibold text-sm text-white">
-            <a href="#about" className=" mt-4 border-b-2 border-b-gray-600">
-              About
-            </a>
-            <a href="#pricing" className=" mt-4 border-b-2 border-b-gray-600">
-              Pricing
-            </a>
-            <a href="#contact" className="text-white mt-4 ">
-              Contact
-            </a>
-            <button className="text-white border border-white px-4 py-2 rounded">
+            {navLinks.map((link, index) => (
+              <Link
+                onClick={handleMenuToggle}
+                key={index}
+                to={link.to}
+                smooth={true}
+                duration={500}
+                className={`mt-4 border-b-2 border-b-gray-600`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <button
+              onClick={() => {
+                handleOpenLogin();
+                handleMenuToggle();
+              }}
+              className="text-white border border-white px-4 py-2 rounded"
+            >
               Login
             </button>
           </div>

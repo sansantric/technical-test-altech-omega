@@ -1,5 +1,4 @@
 import { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -16,11 +15,11 @@ function App() {
   return (
     <div className="App">
       <Navbar handleOpenLogin={handleOpenLogin} />
+      <PopupLogin isOpen={isLoginOpen} onClose={handleCloseLogin} />
       <Home />
       <About />
       <Pricing />
       <Contact />
-      <PopupLogin isOpen={isLoginOpen} onClose={handleCloseLogin} />
     </div>
   );
 }
