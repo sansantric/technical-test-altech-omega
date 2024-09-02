@@ -16,11 +16,11 @@ function App() {
   return (
     <div className="App">
       <Navbar handleOpenLogin={handleOpenLogin} />
+      <PopupLogin isOpen={isLoginOpen} onClose={handleCloseLogin} />
       <Home />
       <About />
       <Pricing />
       <Contact />
-      <PopupLogin isOpen={isLoginOpen} onClose={handleCloseLogin} />
     </div>
   );
 }

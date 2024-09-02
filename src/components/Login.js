@@ -27,10 +27,10 @@ const PopupLogin = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
       <div
         ref={modalRef}
-        className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full"
+        className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full m-6"
       >
         <h2 className="text-2xl font-bold mb-6">Login</h2>
-        <form className="space-y-4">
+        <form className="space-y-4 p-6">
           <div>
             <input
               id="email"
