@@ -67,7 +67,6 @@ const Pricing = () => {
                   Apa yang termasuk:
                 </h4>
                 <ul
-                  role="list"
                   className="mt-4 grid gap-4 text-sm leading-6 text-gray-600"
                 >
                   {plan.features.map((feature, featureIndex) => (
